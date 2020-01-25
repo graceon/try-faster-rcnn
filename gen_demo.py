@@ -2,11 +2,14 @@ import os
 import sys
 
 
-path_trainval='/fdisk/tf-faster-rcnn/data/VOCdevkit2007/VOC2007/ImageSets/Main/trainval.txt'
-path_cache='/fdisk/tf-faster-rcnn/data/cache/voc_2007_trainval_gt_roidb.pkl'
+path_trainval='/fdisk/tf-faster-rcnn/data/VOCdevkit2007/VOC2007/ImageSets/Main/demo.txt'
 
-start=1
-end=80+1
+
+if(len(sys.argv[1])>=1):
+	start=int(sys.argv[1])
+else:
+	exit(255)
+end=start+1
 
 exclude= set()
 for i in range(41,52):
@@ -33,7 +36,3 @@ for group in range(start,end):
 			handle.write('\n')
 		handle.write(str(group).zfill(3)+'_'+str(sub).zfill(3))
 handle.close()
-
-if os.path.exists(path_cache):
-	os.remove(path_cache)
-	print('remove cache')

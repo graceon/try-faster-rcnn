@@ -68,6 +68,9 @@ class RoIDataLayer(object):
       self._shuffle_roidb_inds()
 
     db_inds = self._perm[self._cur:self._cur + cfg.TRAIN.IMS_PER_BATCH]
+
+
+    #solve
     if len(db_inds)==0:
       self._shuffle_roidb_inds()
       db_inds = self._perm[self._cur:self._cur + cfg.TRAIN.IMS_PER_BATCH]

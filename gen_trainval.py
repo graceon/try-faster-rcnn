@@ -6,7 +6,7 @@ path_trainval='/fdisk/tf-faster-rcnn/data/VOCdevkit2007/VOC2007/ImageSets/Main/t
 path_cache='/fdisk/tf-faster-rcnn/data/cache/voc_2007_trainval_gt_roidb.pkl'
 
 start=1
-end=80+1
+end=31+1
 
 exclude= set()
 for i in range(41,52):
